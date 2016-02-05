@@ -1,0 +1,296 @@
+﻿namespace JiongNote
+{
+    partial class MainForm
+    {
+        /// <summary>
+        /// 必需的设计器变量。
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// 清理所有正在使用的资源。
+        /// </summary>
+        /// <param name="disposing">如果应释放托管资源，为 true；否则为 false。</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows 窗体设计器生成的代码
+
+        /// <summary>
+        /// 设计器支持所需的方法 - 不要
+        /// 使用代码编辑器修改此方法的内容。
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.导出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.视图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.logLabel = new System.Windows.Forms.Label();
+            this.treeView = new System.Windows.Forms.TreeView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGo = new System.Windows.Forms.Button();
+            this.btnHistoryBack = new System.Windows.Forms.Button();
+            this.btnToogle = new System.Windows.Forms.Button();
+            this.iconBrowser = new System.Windows.Forms.PictureBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrowser)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.开始ToolStripMenuItem,
+            this.编辑ToolStripMenuItem,
+            this.视图ToolStripMenuItem,
+            this.工具ToolStripMenuItem,
+            this.帮助ToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(1468, 25);
+            this.menuStrip2.TabIndex = 1;
+            this.menuStrip2.Text = "menuStrip2";
+            // 
+            // 开始ToolStripMenuItem
+            // 
+            this.开始ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.导入ToolStripMenuItem,
+            this.导出ToolStripMenuItem});
+            this.开始ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.开始ToolStripMenuItem.Name = "开始ToolStripMenuItem";
+            this.开始ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.开始ToolStripMenuItem.Text = "文件";
+            // 
+            // 导入ToolStripMenuItem
+            // 
+            this.导入ToolStripMenuItem.Name = "导入ToolStripMenuItem";
+            this.导入ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.导入ToolStripMenuItem.Text = "导入";
+            // 
+            // 导出ToolStripMenuItem
+            // 
+            this.导出ToolStripMenuItem.Name = "导出ToolStripMenuItem";
+            this.导出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.导出ToolStripMenuItem.Text = "导出";
+            // 
+            // 编辑ToolStripMenuItem
+            // 
+            this.编辑ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
+            this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.编辑ToolStripMenuItem.Text = "编辑";
+            // 
+            // 视图ToolStripMenuItem
+            // 
+            this.视图ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.视图ToolStripMenuItem.Name = "视图ToolStripMenuItem";
+            this.视图ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.视图ToolStripMenuItem.Text = "视图";
+            // 
+            // 工具ToolStripMenuItem
+            // 
+            this.工具ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.工具ToolStripMenuItem.Name = "工具ToolStripMenuItem";
+            this.工具ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.工具ToolStripMenuItem.Text = "工具";
+            // 
+            // 帮助ToolStripMenuItem
+            // 
+            this.帮助ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
+            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.帮助ToolStripMenuItem.Text = "帮助";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.logLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.treeView);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnGo);
+            this.splitContainer1.Panel2.Controls.Add(this.btnHistoryBack);
+            this.splitContainer1.Panel2.Controls.Add(this.btnToogle);
+            this.splitContainer1.Panel2.Controls.Add(this.iconBrowser);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
+            this.splitContainer1.Panel2.Controls.Add(this.txtUrl);
+            this.splitContainer1.Panel2.Controls.Add(this.webBrowser);
+            this.splitContainer1.Size = new System.Drawing.Size(1468, 785);
+            this.splitContainer1.SplitterDistance = 336;
+            this.splitContainer1.TabIndex = 2;
+            this.splitContainer1.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.splitContainer1_SplitterMoving);
+            // 
+            // logLabel
+            // 
+            this.logLabel.AutoSize = true;
+            this.logLabel.Location = new System.Drawing.Point(75, 761);
+            this.logLabel.Name = "logLabel";
+            this.logLabel.Size = new System.Drawing.Size(65, 12);
+            this.logLabel.TabIndex = 4;
+            this.logLabel.Text = "no message";
+            // 
+            // treeView
+            // 
+            this.treeView.BackColor = System.Drawing.Color.DarkGray;
+            this.treeView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.treeView.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.treeView.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.treeView.Indent = 10;
+            this.treeView.ItemHeight = 20;
+            this.treeView.Location = new System.Drawing.Point(3, 2);
+            this.treeView.Name = "treeView";
+            this.treeView.Size = new System.Drawing.Size(330, 756);
+            this.treeView.TabIndex = 0;
+            this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(12, 761);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 12);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "message:";
+            // 
+            // btnGo
+            // 
+            this.btnGo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnGo.Location = new System.Drawing.Point(804, 10);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(34, 23);
+            this.btnGo.TabIndex = 7;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // btnHistoryBack
+            // 
+            this.btnHistoryBack.Location = new System.Drawing.Point(981, 10);
+            this.btnHistoryBack.Name = "btnHistoryBack";
+            this.btnHistoryBack.Size = new System.Drawing.Size(55, 23);
+            this.btnHistoryBack.TabIndex = 6;
+            this.btnHistoryBack.Text = "返回";
+            this.btnHistoryBack.UseVisualStyleBackColor = true;
+            this.btnHistoryBack.Click += new System.EventHandler(this.btnHistoryBack_Click);
+            // 
+            // btnToogle
+            // 
+            this.btnToogle.Location = new System.Drawing.Point(12, 9);
+            this.btnToogle.Name = "btnToogle";
+            this.btnToogle.Size = new System.Drawing.Size(26, 23);
+            this.btnToogle.TabIndex = 5;
+            this.btnToogle.Text = "《";
+            this.btnToogle.UseVisualStyleBackColor = true;
+            this.btnToogle.Click += new System.EventHandler(this.btnToogle_Click);
+            // 
+            // iconBrowser
+            // 
+            this.iconBrowser.Location = new System.Drawing.Point(60, 9);
+            this.iconBrowser.Name = "iconBrowser";
+            this.iconBrowser.Size = new System.Drawing.Size(25, 25);
+            this.iconBrowser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconBrowser.TabIndex = 3;
+            this.iconBrowser.TabStop = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(912, 9);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(55, 23);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(97, 10);
+            this.txtUrl.Multiline = true;
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(701, 24);
+            this.txtUrl.TabIndex = 1;
+            // 
+            // webBrowser
+            // 
+            this.webBrowser.Location = new System.Drawing.Point(11, 39);
+            this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser.Name = "webBrowser";
+            this.webBrowser.Size = new System.Drawing.Size(1055, 734);
+            this.webBrowser.TabIndex = 0;
+            this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
+            this.webBrowser.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowser_NewWindow);
+            // 
+            // MainForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1468, 810);
+            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.menuStrip2);
+            this.Name = "MainForm";
+            this.Text = "我的笔记";
+            this.menuStrip2.ResumeLayout(false);
+            this.menuStrip2.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.iconBrowser)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem 开始ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 编辑ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 视图ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 工具ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导入ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 导出ToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.TreeView treeView;
+        private System.Windows.Forms.PictureBox iconBrowser;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.WebBrowser webBrowser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label logLabel;
+        private System.Windows.Forms.Button btnToogle;
+        private System.Windows.Forms.Button btnGo;
+        private System.Windows.Forms.Button btnHistoryBack;
+
+    }
+}
+

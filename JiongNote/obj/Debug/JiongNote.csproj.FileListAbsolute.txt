@@ -1,0 +1,13 @@
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\JiongNote.exe.config
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\JiongNote.exe
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\JiongNote.pdb
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.csprojResolveAssemblyReference.cache
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.MainForm.resources
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.Properties.Resources.resources
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.csproj.GenerateResource.Cache
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.exe
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Debug\JiongNote.pdb
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\Resources\Data\note-category.xml
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\Resources\Data\note-tree.xml
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\Resources\Images\web-broswer.jpg
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Debug\Resources\Data\welcome.html
