@@ -11,3 +11,6 @@ D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.Properties.R
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.csproj.GenerateResource.Cache
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.exe
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.pdb
+D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.DashBoardForm.resources
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Release\JiongNote.AddToDoForm.resources
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Release\Resources\Data\todo.xml

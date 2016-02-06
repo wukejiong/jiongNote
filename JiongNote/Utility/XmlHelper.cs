@@ -229,7 +229,7 @@ namespace JiongNote.Utility
         ///<param name="xmlAttributeName">要匹配xmlAttributeName的属性名称</param>
         ///<param name="value">属性值</param>
         ///<returns>成功返回true,失败返回false</returns>
-        public static bool CreateOrUpdateXmlAttributeByXPath(string xmlFileName, string xpath, string xmlAttributeName, string value)
+        public static bool CreateOrUpdateXmlAttributeByXPath(string xmlFileName, string xpath, string xmlAttributeName, string value,int index=0)
         {
             bool isSuccess = false;
             bool isExistsAttribute = false;//标识属性是否存在
@@ -237,7 +237,12 @@ namespace JiongNote.Utility
             try
             {
                 xmlDoc.Load(xmlFileName); //加载XML文档
-                XmlNode xmlNode = xmlDoc.SelectSingleNode(xpath);
+                 XmlNode xmlNode=null;
+                var xmlNodeList  =xmlDoc.SelectNodes(xpath);
+                if(xmlNodeList!=null && xmlNodeList.Count>=index+1){
+                    xmlNode =xmlNodeList[index];
+                }
+               
                 if (xmlNode != null)
                 {
                     //遍历xpath节点中的所有属性
@@ -386,7 +391,7 @@ namespace JiongNote.Utility
 
         public static String GetInnerText(this XmlNode node)
         {
-            return new Regex("\\s+").Replace( node.InnerText,"");
+            return new Regex("(^\\s+)|(\\s+$)").Replace( node.InnerText,"");
         }
     }
 }

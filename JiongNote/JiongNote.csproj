@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddToDoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddToDoForm.Designer.cs">
+      <DependentUpon>AddToDoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DashBoardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoardForm.Designer.cs">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -51,11 +63,21 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\ToDoModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\NoteDao.cs" />
+    <Compile Include="Repository\TodoDao.cs" />
+    <Compile Include="Utility\CryptHelper.cs" />
+    <Compile Include="Utility\DownloadHelper.cs" />
     <Compile Include="Utility\Tool.cs" />
     <Compile Include="Utility\XmlHelper.cs" />
+    <EmbeddedResource Include="AddToDoForm.resx">
+      <DependentUpon>AddToDoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashBoardForm.resx">
+      <DependentUpon>DashBoardForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +117,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\Data\welcome.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\todo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

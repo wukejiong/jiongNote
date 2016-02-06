@@ -14,16 +14,31 @@ namespace JiongNote.Model
     {
         public string Id { get; set; }
         public string Name { get; set; }
-        public List<Note> Notes { get; set; }
+        public List<NoteModel> Notes { get; set; }
     }
 
     /// <summary>
     /// 笔记
     /// </summary>
-    public class Note
+    public class NoteModel
     {
+        /// <summary>
+        /// 标题
+        /// </summary>
         public string Title { get; set; }
+
+        /// <summary>
+        /// 关键字
+        /// </summary>
         public string Keywords { get; set; }
+
+        /// <summary>
+        /// 内容（可以是url，也可以是内容）
+        /// </summary>
         public string Content { get; set; }
+        /// <summary>
+        /// 是否阅读
+        /// </summary>
+        public bool IsRead { get; set; }
     }
 }

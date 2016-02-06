@@ -32,6 +32,7 @@
             this.开始ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导入ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.导出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.便签ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.编辑ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.视图ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.工具ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,35 +69,43 @@
             this.menuStrip2.Size = new System.Drawing.Size(1468, 25);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // 开始ToolStripMenuItem
             // 
             this.开始ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.导入ToolStripMenuItem,
-            this.导出ToolStripMenuItem});
+            this.导出ToolStripMenuItem,
+            this.便签ToolStripMenuItem});
             this.开始ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(10, 0, 20, 0);
             this.开始ToolStripMenuItem.Name = "开始ToolStripMenuItem";
             this.开始ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.开始ToolStripMenuItem.Text = "文件";
+            this.开始ToolStripMenuItem.Text = "工作";
             // 
             // 导入ToolStripMenuItem
             // 
             this.导入ToolStripMenuItem.Name = "导入ToolStripMenuItem";
             this.导入ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.导入ToolStripMenuItem.Text = "导入";
+            this.导入ToolStripMenuItem.Text = "计划";
             // 
             // 导出ToolStripMenuItem
             // 
             this.导出ToolStripMenuItem.Name = "导出ToolStripMenuItem";
             this.导出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.导出ToolStripMenuItem.Text = "导出";
+            this.导出ToolStripMenuItem.Text = "文档";
+            // 
+            // 便签ToolStripMenuItem
+            // 
+            this.便签ToolStripMenuItem.Name = "便签ToolStripMenuItem";
+            this.便签ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.便签ToolStripMenuItem.Text = "便签";
             // 
             // 编辑ToolStripMenuItem
             // 
             this.编辑ToolStripMenuItem.Margin = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.编辑ToolStripMenuItem.Name = "编辑ToolStripMenuItem";
             this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.编辑ToolStripMenuItem.Text = "编辑";
+            this.编辑ToolStripMenuItem.Text = "学习";
             // 
             // 视图ToolStripMenuItem
             // 
@@ -164,7 +173,7 @@
             this.treeView.ItemHeight = 20;
             this.treeView.Location = new System.Drawing.Point(3, 2);
             this.treeView.Name = "treeView";
-            this.treeView.Size = new System.Drawing.Size(330, 756);
+            this.treeView.Size = new System.Drawing.Size(317, 756);
             this.treeView.TabIndex = 0;
             this.treeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView_NodeMouseClick);
             // 
@@ -254,7 +263,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip2);
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "我的笔记";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -290,6 +301,7 @@
         private System.Windows.Forms.Button btnToogle;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnHistoryBack;
+        private System.Windows.Forms.ToolStripMenuItem 便签ToolStripMenuItem;
 
     }
 }

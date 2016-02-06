@@ -1,35 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Notes>
   <Type id="1" name="待阅读"> 
-    <Note>
+    <Note isread="0">
       <title>让Asp.Net WebAPI支持OData查询，排序，过滤。</title>
       <keyword>C#,Asp.Net,WebAPI,oData</keyword>
       <content>http://www.cnblogs.com/liuzhendong/p/4233380.html</content>
     </Note>
-    <Note keywords="" url="">
+    <Note  isread="0">
       <title>Mono 3.0.2 基于双工通信的WCF应用 Demo</title>
       <keyword>C#,WCF,双工通信</keyword>
       <content>http://www.cnblogs.com/shanyou/archive/2012/12/30/2839568.html</content>
     </Note>
-    <Note >
+    <Note   isread="0">
       <title>.net,工具</title>
       <keyword>C#,WCF,双工通信</keyword>
       <content>http://www.cnblogs.com/kingkoo/archive/2008/02/26/1081476.html</content>
-    
   </Note>
+    <Note  isread="0">
+      <title>C# WinForm开发系列 - ListBox/ListView/Panel</title>
+      <keyword>C#,WinForm,ListBox,ListView,Panel</keyword>
+      <content>http://www.cnblogs.com/peterzb/archive/2009/06/18/1505424.html</content>
+    </Note>
+    
   </Type>
   <Type id="2" name="已阅读">
-    <Note>
+    <Note  isread="1">
       <title>C# WinForm获取 当前执行程序路径的几种方法</title>
       <keyword>C#,winfrom,路径</keyword>
       <content>http://blog.csdn.net/yanlele424/article/details/7329389</content>
     </Note>
-    <Note>
+    <Note   isread="1">
       <title> Mono 3.0.2 基于双工通信的WCF应用 Demo</title>
      <keyword>C#,WCF,双工通信</keyword>
       <content>http://www.cnblogs.com/shanyou/archive/2012/12/30/2839568.html</content>
  </Note>
-    <Note>
+    <Note   isread="1">
       <title> test content</title>
       <keyword>xxxxxxx</keyword>
       <content><![CDATA[<b>今天刚吃了饭，撑死了</b>]]></content>
