@@ -6,17 +6,6 @@ using System.Threading.Tasks;
 
 namespace JiongNote.Model
 {
-
-    /// <summary>
-    /// 笔记类型
-    /// </summary>
-    public class NoteType
-    {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public List<NoteModel> Notes { get; set; }
-    }
-
     /// <summary>
     /// 笔记
     /// </summary>
@@ -40,5 +29,15 @@ namespace JiongNote.Model
         /// 是否阅读
         /// </summary>
         public bool IsRead { get; set; }
+
+        /// <summary>
+        /// 类型
+        /// </summary>
+        public int Type { get; set; }
+
+        /// <summary>
+        /// 创建时间
+        /// </summary>
+        public DateTime CreateTime { get; set; }
     }
 }

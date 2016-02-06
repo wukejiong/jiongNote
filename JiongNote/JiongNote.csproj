@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddToReadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddToReadForm.Designer.cs">
+      <DependentUpon>AddToReadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddToDoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,13 +62,14 @@
     <Compile Include="DashBoardForm.Designer.cs">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Model\NoteTypeModel.cs" />
+    <Compile Include="NoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="NoteForm.Designer.cs">
+      <DependentUpon>NoteForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Note.cs" />
+    <Compile Include="Model\NoteModel.cs" />
     <Compile Include="Model\ToDoModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,14 +79,17 @@
     <Compile Include="Utility\DownloadHelper.cs" />
     <Compile Include="Utility\Tool.cs" />
     <Compile Include="Utility\XmlHelper.cs" />
+    <EmbeddedResource Include="AddToReadForm.resx">
+      <DependentUpon>AddToReadForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddToDoForm.resx">
       <DependentUpon>AddToDoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoardForm.resx">
       <DependentUpon>DashBoardForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="NoteForm.resx">
+      <DependentUpon>NoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -105,7 +115,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Data\note-category.xml">
+    <EmbeddedResource Include="Resources\Data\note-type.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Data\note-tree.xml">
@@ -124,6 +134,10 @@
     <EmbeddedResource Include="Resources\Data\todo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Images\bg.jpg" />
+    <Content Include="Resources\Images\list-bg.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

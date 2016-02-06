@@ -12,39 +12,44 @@ namespace JiongNote.Repository
 {
     public class NoteDao
     {
+        private static string typePath = Tool.GetResoucePath("/Resources/Data/note-type.xml");
         private static string treePath = Tool.GetResoucePath("/Resources/Data/note-tree.xml");
+        private static string timeTemp = "yyyy-MM-dd HH:mm:ss";
+
+        #region 获取笔记分类
+        public static List<NoteTypeModel> GetTypes (){
+            var result = new List<NoteTypeModel>();
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(typePath);
+            XmlNodeList notesList = xmlDoc.SelectNodes("/Types/Item");
+            foreach (XmlNode typeNode in notesList)
+            {
+                //add note-type
+                result.Add(new NoteTypeModel()
+                {
+                    Id =int.Parse(typeNode.GetAttribute("id", 0)),
+                    ParentId = int.Parse(typeNode.GetAttribute("parent", 0)),
+                    Name = typeNode.GetInnerText()
+                });
+            }
+            return result;
+        }
+        #endregion 
 
         #region 获取笔记的树结构
         /// <summary>
         /// 获取笔记的树结构
         /// </summary>
         /// <returns></returns>
-        public static List<NoteType> GetNoteTree()
+        public static List<NoteModel> GetNoteTree()
         {
-            var result = new List<NoteType>();
+            var result = new List<NoteModel>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(treePath);
-            XmlNodeList notesList = xmlDoc.SelectNodes("/Notes/Type");
-            foreach (XmlNode typeNode in notesList)
+            XmlNodeList notesList = xmlDoc.SelectNodes("/Notes/Note");
+            foreach (XmlNode node in notesList)
             {
-                //create note-list
-                var xmlNoteList = typeNode.SelectNodes("Note");
-                var noteList = new List<NoteModel>();
-                if (xmlNoteList != null)
-                {
-                    foreach (XmlNode noteNode in xmlNoteList)
-                    {
-                        noteList.Add(parseNoteNode(noteNode));
-                    }
-                }
-
-                //add note-type
-                result.Add(new NoteType()
-                {
-                    Id = typeNode.GetAttribute("id", 0),
-                    Name = typeNode.GetAttribute("name", ""),
-                    Notes = noteList
-                });
+                result.Add(parseNoteNode(node));
             }
             return result;
         }
@@ -56,7 +61,9 @@ namespace JiongNote.Repository
                     Keywords = noteNode.SelectSingleNode("keyword").GetInnerText(),
                     Title = noteNode.SelectSingleNode("title").GetInnerText(),
                     Content = noteNode.SelectSingleNode("content").GetInnerText(),
-                    IsRead = noteNode.GetAttribute("isread", 0) == "1"
+                    IsRead = noteNode.GetAttribute("isread", 0) == "1",
+                    Type = int.Parse(noteNode.SelectSingleNode("type").GetInnerText()),
+                    CreateTime =DateTime.Parse(noteNode.SelectSingleNode("createtime").GetInnerText())
                 };
         }
         #endregion
@@ -71,12 +78,11 @@ namespace JiongNote.Repository
             var result = new List<string>();
             int i = 1;
             foreach(var item in data){
-                var content = item.Content;
-                if(!content.StartsWith("http") && content.Length>100){
-                    content = content.Substring(0,100);
-                }
-                var key =CryptHelper.Md5Encrypt(content);
-                result.Add(string.Concat("["+i+"]  ",item.Title));
+                //var key =CryptHelper.Md5Encrypt(item.Content);
+                 var maxLength =40;
+                 var time = item.CreateTime.ToString(timeTemp);
+                 var title = item.Title.Length > maxLength ? item.Title.Substring(0, maxLength) : item.Title.PadRight(maxLength, ' ');
+                 result.Add(string.Concat("[" + i + "]  ", title, " ₪(", time, ")"));
                 i++;
             }
             return result;
@@ -91,13 +97,58 @@ namespace JiongNote.Repository
             var result = new List<NoteModel>();
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(treePath);
-            XmlNodeList notesList = xmlDoc.SelectNodes("/Notes/Type/Note[@isread=0]");
+            XmlNodeList notesList = xmlDoc.SelectNodes("/Notes/Note[@isread=0]");
             foreach (XmlNode noteNode in notesList)
             {
                 result.Add(parseNoteNode(noteNode));
             }
             return result;
         } 
+        #endregion
+
+        #region 添加阅读
+        public static bool Add(NoteModel model) {
+            try
+            {
+                var xPath = "/Notes";
+                var nodeName = "Note";
+                var innerXml = string.Format(@"<type>{0}</type>
+                                                        <title> {1}</title>
+                                                        <keyword>{2}</keyword>
+                                                        <content><![CDATA[{3}]]></content>
+                                                        <createtime>{4}</createtime>",
+                                                     model.Type,model.Title,model.Keywords,model.Content,model.CreateTime.ToString(timeTemp));
+                var attrName = "isread";
+                var attrValue = "0";
+                return XMLHelper.CreateXmlNodeByXPath(treePath, xPath, nodeName, innerXml, attrName, attrValue);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        } 
+        #endregion
+
+        #region 完成阅读
+        /// <summary>
+        /// 完成阅读
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public static bool Complete(DateTime createTime)
+        {
+            try
+            {
+                var xmlPath = "/Notes/Note[@isread=0][createtime='" + createTime.ToString(timeTemp) + "']";
+                var xmlAttributeName = "isread";
+                var xmlAttributeValue = "1";
+                return XMLHelper.CreateOrUpdateXmlAttributeByXPath(treePath, xmlPath, xmlAttributeName, xmlAttributeValue);
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
         #endregion
     }
 }

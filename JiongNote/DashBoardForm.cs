@@ -47,25 +47,21 @@ namespace JiongNote
         private void RefreshToReadList()
         {
             toReadList.Items.Clear();
+            toReadDataList = NoteDao.GetToRead2();
             toReadList.Items.AddRange(toReadDataList.ToArray());
         }
 
-
+        /// <summary>
+        /// 刷新待办数据
+        /// </summary>
+        private void RefreshToDoList()
+        {
+            todoList.Items.Clear();
+            toDoDataList = TodoDao.GetTodos2();
+            todoList.Items.AddRange(toDoDataList.ToArray());
+        }
 
         private void DashBoardForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void todoList_DrawItem(object sender, DrawItemEventArgs e)
-        {
-            //偶数行的ItemHeight为20
-            if (e.Index % 2 == 0) todoList.ItemHeight = 20;
-            //奇数行的ItemHeight为40
-            else todoList.ItemHeight = 40;
-        }
-
-        private void toReadList_DrawItem(object sender, DrawItemEventArgs e)
         {
 
         }
@@ -76,18 +72,8 @@ namespace JiongNote
             form.Owner = this;
             var result =form.ShowDialog();
             if (result == DialogResult.OK) {
-                btnRefreshTodo_Click(null, null);
+                RefreshToDoList();
             }
-        }
-
-        /// <summary>
-        /// 刷新待办数据
-        /// </summary>
-        private void btnRefreshTodo_Click(object sender, EventArgs e)
-        {
-            todoList.Items.Clear();
-            toDoDataList = TodoDao.GetTodos2();
-            todoList.Items.AddRange(toDoDataList.ToArray());
         }
 
         /// <summary>
@@ -109,7 +95,7 @@ namespace JiongNote
                 var deadline = DateTime.Parse(toDoDataList[selectIndex].Split(new char[] { '₪' })[1].TrimStart('(').TrimEnd(')'));
                 if (TodoDao.Complete(deadline))
                 {
-                    btnRefreshTodo_Click(null, null);
+                    RefreshToDoList();
                 }
                 else
                 {
@@ -119,6 +105,50 @@ namespace JiongNote
         }
 
         private void btnDownload_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnGoRead_Click(object sender, EventArgs e)
+        {
+            new NoteForm().Show();
+        }
+
+        private void btnCompleteRead_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("确定已完成吗?", "标记完成", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                var selectIndex = toReadList.SelectedIndex;
+                if (selectIndex < 0)
+                {
+                    MessageBox.Show("您还未选中任何项");
+                    return;
+                }
+                var createTime = DateTime.Parse(toReadDataList[selectIndex].Split(new char[] { '₪' })[1].TrimStart('(').TrimEnd(')'));
+                if (NoteDao.Complete(createTime))
+                {
+                    RefreshToReadList();
+                }
+                else
+                {
+                    MessageBox.Show("操作失败！");
+                }
+            }
+        }
+
+        private void btnAddRead_Click(object sender, EventArgs e)
+        {
+            AddToReadForm form = new AddToReadForm();
+            form.Owner = this;
+            var result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                RefreshToReadList();
+            }
+        }
+
+        private void 下载文件ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DownloadFiles();
         }

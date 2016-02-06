@@ -1,4 +1,5 @@
-﻿using JiongNote.Repository;
+﻿using JiongNote.Model;
+using JiongNote.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +12,9 @@ using System.Windows.Forms;
 
 namespace JiongNote
 {
-    public partial class MainForm : Form
+    public partial class NoteForm : Form
     {
-        public MainForm()
+        public NoteForm()
         {
             InitializeComponent();
             init();
@@ -30,30 +31,47 @@ namespace JiongNote
             this.webBrowser.Url = new Uri(Tool.GetResoucePath("\\Resources\\Data\\welcome.html"));
         }
 
+
+        List<NoteTypeModel> noteTypes;
+        List<NoteModel> noteTree;
         /// <summary>
         /// 初始化左侧的树
         /// </summary>
         private void initTree() {
-            var noteTree = NoteDao.GetNoteTree();
+             noteTypes=NoteDao.GetTypes().OrderBy(p=>p.Id).ToList();
+             noteTree = NoteDao.GetNoteTree();
             TreeNode rootNode = new TreeNode();
             rootNode.Text = "❤ " + "笔记";
+            rootNode.Tag = 0;
             treeView.Nodes.Add(rootNode);
-            foreach (var type in noteTree)
+            loadTree(rootNode);
+            treeView.ExpandAll();
+        }
+
+        private void loadTree(TreeNode parentNode)
+        {
+            var childTypes = noteTypes.Where(p => p.ParentId ==(int)parentNode.Tag).ToList();
+            if (childTypes.Count>0)
             {
-                TreeNode typeNode = new TreeNode();
-                typeNode.Text = "✪ " + type.Name;
-                typeNode.Name = type.Id;
-                foreach (var note in type.Notes)
+                foreach(var childType in childTypes){
+                    TreeNode typeNode = new TreeNode();
+                    typeNode.Text = "✪ " + childType.Name;
+                    typeNode.Tag = childType.Id;
+                    parentNode.Nodes.Add(typeNode);
+                    loadTree(typeNode);
+                }
+            }
+            else
+            {
+                foreach (var note in noteTree.Where(p => p.Type == (int)parentNode.Tag).ToList())
                 {
                     TreeNode noteNode = new TreeNode();
                     noteNode.Text = "★  " + note.Title;
                     noteNode.Name = note.Keywords;
                     noteNode.Tag = note.Content;
-                    typeNode.Nodes.Add(noteNode);
+                    parentNode.Nodes.Add(noteNode);
                 }
-                rootNode.Nodes.Add(typeNode);
             }
-            treeView.ExpandAll();
         }
 
        /// <summary>
@@ -137,7 +155,7 @@ namespace JiongNote
         {
             if (e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                string content = (string)e.Node.Tag;
+                string content = e.Node.Tag.ToString();
                 if(content==null){
                     return;
                 }

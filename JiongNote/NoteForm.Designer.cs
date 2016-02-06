@@ -1,6 +1,6 @@
 ﻿namespace JiongNote
 {
-    partial class MainForm
+    partial class NoteForm
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -58,6 +58,8 @@
             // 
             // menuStrip2
             // 
+            this.menuStrip2.BackgroundImage = global::JiongNote.Properties.Resources.bg;
+            this.menuStrip2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.开始ToolStripMenuItem,
             this.编辑ToolStripMenuItem,
@@ -136,12 +138,16 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.BackgroundImage = global::JiongNote.Properties.Resources.bg;
+            this.splitContainer1.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel1.Controls.Add(this.logLabel);
             this.splitContainer1.Panel1.Controls.Add(this.treeView);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.BackgroundImage = global::JiongNote.Properties.Resources.bg;
+            this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.splitContainer1.Panel2.Controls.Add(this.btnGo);
             this.splitContainer1.Panel2.Controls.Add(this.btnHistoryBack);
             this.splitContainer1.Panel2.Controls.Add(this.btnToogle);
@@ -165,10 +171,10 @@
             // 
             // treeView
             // 
-            this.treeView.BackColor = System.Drawing.Color.DarkGray;
+            this.treeView.BackColor = System.Drawing.Color.OldLace;
             this.treeView.Cursor = System.Windows.Forms.Cursors.Hand;
             this.treeView.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.treeView.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.treeView.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.treeView.Indent = 10;
             this.treeView.ItemHeight = 20;
             this.treeView.Location = new System.Drawing.Point(3, 2);
@@ -189,6 +195,7 @@
             // 
             // btnGo
             // 
+            this.btnGo.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnGo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnGo.Location = new System.Drawing.Point(804, 10);
             this.btnGo.Name = "btnGo";
@@ -200,9 +207,10 @@
             // 
             // btnHistoryBack
             // 
+            this.btnHistoryBack.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnHistoryBack.Location = new System.Drawing.Point(981, 10);
             this.btnHistoryBack.Name = "btnHistoryBack";
-            this.btnHistoryBack.Size = new System.Drawing.Size(55, 23);
+            this.btnHistoryBack.Size = new System.Drawing.Size(55, 24);
             this.btnHistoryBack.TabIndex = 6;
             this.btnHistoryBack.Text = "返回";
             this.btnHistoryBack.UseVisualStyleBackColor = true;
@@ -210,6 +218,7 @@
             // 
             // btnToogle
             // 
+            this.btnToogle.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnToogle.Location = new System.Drawing.Point(12, 9);
             this.btnToogle.Name = "btnToogle";
             this.btnToogle.Size = new System.Drawing.Size(26, 23);
@@ -229,9 +238,10 @@
             // 
             // btnRefresh
             // 
+            this.btnRefresh.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnRefresh.Location = new System.Drawing.Point(912, 9);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(55, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(55, 25);
             this.btnRefresh.TabIndex = 2;
             this.btnRefresh.Text = "刷新";
             this.btnRefresh.UseVisualStyleBackColor = true;
@@ -255,14 +265,16 @@
             this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
             this.webBrowser.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowser_NewWindow);
             // 
-            // MainForm
+            // NoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::JiongNote.Properties.Resources.bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1468, 810);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip2);
-            this.Name = "MainForm";
+            this.Name = "NoteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "我的笔记";
             this.Load += new System.EventHandler(this.MainForm_Load);

@@ -1,12 +1,10 @@
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\JiongNote.exe.config
-D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\Resources\Data\note-category.xml
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\Resources\Data\note-tree.xml
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\Resources\Images\web-broswer.jpg
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\Resources\Data\welcome.html
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\JiongNote.exe
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\bin\Release\JiongNote.pdb
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.csprojResolveAssemblyReference.cache
-D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.MainForm.resources
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.Properties.Resources.resources
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.csproj.GenerateResource.Cache
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.exe
@@ -14,3 +12,6 @@ D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.pdb
 D:\Jonny\源码\JiongNote\jiongNote\JiongNote\obj\Release\JiongNote.DashBoardForm.resources
 D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Release\JiongNote.AddToDoForm.resources
 D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Release\Resources\Data\todo.xml
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Release\JiongNote.NoteForm.resources
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\bin\Release\Resources\Data\note-type.xml
+D:\Jonny\源码\JiongNote\JiongNote\JiongNote\obj\Release\JiongNote.AddToReadForm.resources

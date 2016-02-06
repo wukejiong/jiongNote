@@ -96,9 +96,10 @@ namespace JiongNote.Repository
             foreach (var item in data)
             {
                 var time = item.Deadline.ToString(timeTemp);
-                var title = item.Content.Length > 30 ? item.Content.Substring(0, 50) : item.Content.PadRight(30,' ');
+                var maxLength = 40;
+                var title = item.Content.Length > maxLength ? item.Content.Substring(0, maxLength) : item.Content.PadRight(maxLength, ' ');
                 //var key = CryptHelper.Md5Encrypt(item.Content);
-                result.Add(string.Concat("[" + i + "] ", title, " ₪(", time, ")"));
+                result.Add(string.Concat("[" + i + "]  ", title, " ₪(", time, ")"));
                 i++;
             }
             return result;
@@ -117,8 +118,9 @@ namespace JiongNote.Repository
             {
                 var xPath ="/Todos" ;
                 var nodeName = "Todo";
-                var innerXml = @"<deadline>" + model.Deadline.ToString(timeTemp) + "</deadline>" +
-                                         "<content><![CDATA["+model.Content+"]]> </content>";
+                var innerXml = string.Format(@"<deadline>{0}</deadline>" +
+                                         "<content><![CDATA[{1}]]> </content>",
+                                         model.Deadline.ToString(timeTemp) ,model.Content);
                 var attrName ="isdo";
                 var attrValue="0";
                return XMLHelper.CreateXmlNodeByXPath(treePath,xPath,nodeName,innerXml,attrName,attrValue);

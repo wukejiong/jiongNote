@@ -385,12 +385,18 @@ namespace JiongNote.Utility
 
     public static class XMLNodeExtension {
         public static String GetAttribute(this XmlNode node,string attrName,Object defaultValue) {
+            if (node == null) { 
+                return defaultValue.ToString();
+            }
             var attr =node.Attributes[attrName];
             return attr == null ? defaultValue.ToString() : attr.Value;
         }
 
         public static String GetInnerText(this XmlNode node)
         {
+            if (node == null) { 
+                return null;
+            }
             return new Regex("(^\\s+)|(\\s+$)").Replace( node.InnerText,"");
         }
     }
