@@ -14,21 +14,31 @@ namespace JiongNote
 {
     public partial class NoteForm : Form
     {
+        private int leftWidth = 0;
         public NoteForm()
         {
             InitializeComponent();
             init();
         }
 
+        public NoteForm(NoteModel model)
+        {
+            InitializeComponent();
+            init();
+            ShowWeb(model.Content);
+        }
+
         private void init()
         {
             //init tree
             initTree();
-
             //show icon-browser
             iconBrowser.LoadAsync(Tool.GetResoucePath("\\Resources\\Images\\web-broswer.jpg"));
             this.webBrowser.ScriptErrorsSuppressed=true;
             this.webBrowser.Url = new Uri(Tool.GetResoucePath("\\Resources\\Data\\welcome.html"));
+
+            leftWidth = splitContainer1.Panel1.Width;
+            btnToogle_Click(null,null);//默认关闭分类窗
         }
 
 
@@ -91,8 +101,8 @@ namespace JiongNote
         /// <param name="e"></param>
         private void splitContainer1_SplitterMoving(object sender, SplitterCancelEventArgs e)
         {
-            logLabel.Text = splitContainer1.Panel1.Width.ToString();
-            treeView.Width = splitContainer1.Panel1.Width;
+            //logLabel.Text = splitContainer1.Panel1.Width.ToString();
+            //treeView.Width = splitContainer1.Panel1.Width;
         }
 
         /// <summary>
@@ -114,7 +124,7 @@ namespace JiongNote
         /// <param name="e"></param>
         private void btnToogle_Click(object sender, EventArgs e)
         {
-            webBrowser.Width = webBrowser.Width + splitContainer1.Panel1.Width * (splitContainer1.Panel1Collapsed ? -1 : 1);
+            webBrowser.Width = webBrowser.Width + leftWidth * (splitContainer1.Panel1Collapsed ? -1 : 1);
             splitContainer1.Panel1Collapsed = !splitContainer1.Panel1Collapsed;
             btnToogle.Text = splitContainer1.Panel1Collapsed ? "》" : "《";
         }
@@ -159,16 +169,24 @@ namespace JiongNote
                 if(content==null){
                     return;
                 }
-                if (content.StartsWith("http://") || content.StartsWith("https://"))
-                {
-                    txtUrl.Text = content;
-                    this.webBrowser.Url = new Uri(content);
-                }
-                else
-                {
-                    txtUrl.Text = "";
-                    this.webBrowser.DocumentText = content;
-                }
+                ShowWeb(content);
+            }
+        }
+
+        /// <summary>
+        /// 显示内容
+        /// </summary>
+        /// <param name="content"></param>
+        private void ShowWeb(string content) {
+            if (content.StartsWith("http://") || content.StartsWith("https://"))
+            {
+                txtUrl.Text = content;
+                this.webBrowser.Url = new Uri(content);
+            }
+            else
+            {
+                txtUrl.Text = "";
+                this.webBrowser.DocumentText = content;
             }
         }
 

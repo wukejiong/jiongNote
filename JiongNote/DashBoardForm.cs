@@ -152,5 +152,74 @@ namespace JiongNote
         {
             DownloadFiles();
         }
+
+        /// <summary>
+        ///  双击【待办】打开详情
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void todoList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            var selectIndex = todoList.SelectedIndex;
+            if (selectIndex >= 0)
+            {
+                var deadline = DateTime.Parse(toDoDataList[selectIndex].Split(new char[] { '₪' })[1].TrimStart('(').TrimEnd(')'));
+                var model = TodoDao.Get(deadline);
+                AddToDoForm form = new AddToDoForm(model);
+                form.ShowDialog();
+            }
+        }
+
+        /// <summary>
+        ///  双击【待读】打开详情
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void toReadList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            var selectIndex = toReadList.SelectedIndex;
+            if (selectIndex >= 0)
+            {
+                var deadline = DateTime.Parse(toReadDataList[selectIndex].Split(new char[] { '₪' })[1].TrimStart('(').TrimEnd(')'));
+                var model =NoteDao.Get(deadline);
+                NoteForm form = new NoteForm(model);
+                form.ShowDialog();
+            } 
+        }
+
+        private void DashBoardForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("确认关闭吗？", "确认", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                == System.Windows.Forms.DialogResult.No)
+                e.Cancel = true;
+        }
+
+        private void DashBoardForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)  //判断是否最小化
+            {
+                this.ShowInTaskbar = false;  //不显示在系统任务栏
+                notifyIcon.Visible = true;  //托盘图标可见
+            }
+        }
+
+        private void notifyIcon_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.Show();
+                this.BringToFront();
+                this.ShowInTaskbar = true;
+                this.WindowState = FormWindowState.Normal;
+                notifyIcon.Visible = true;
+            }
+            else {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;  //不显示在系统任务栏
+                notifyIcon.Visible = true;  //托盘图标可见
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using JiongNote.Utility;
+using System.Windows.Forms;
 
 namespace JiongNote.Repository
 {
@@ -13,6 +14,26 @@ namespace JiongNote.Repository
     {
         private static string treePath = Tool.GetResoucePath("/Resources/Data/todo.xml");
         private static string timeTemp = "yyyy-MM-dd HH:mm:ss";
+
+        #region 读取待办
+        /// <summary>
+        /// 获取待办
+        /// </summary>
+        /// <param name="deadline"></param>
+        /// <returns></returns>
+        public static ToDoModel Get(DateTime deadline) {
+            ToDoModel result = null;
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(treePath);
+            var xmlPath = "/Todos/Todo[deadline='" + deadline.ToString(timeTemp) + "']";
+            XmlNode node = xmlDoc.SelectSingleNode(xmlPath);
+            if(node!=null){
+                result = parseNoteNode(node);
+            }
+            return result;
+        }
+        #endregion
 
         #region  获取所有待办
         /// <summary>

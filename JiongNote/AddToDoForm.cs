@@ -17,8 +17,24 @@ namespace JiongNote
         public AddToDoForm()
         {
             InitializeComponent();
+            init();
+        }
+        
+        public AddToDoForm(ToDoModel model)
+        {
+            InitializeComponent();
+            init();
+            //show detial
+            txtContent.Text = model.Content;
+            dateTimePicker.Text=model.Deadline.ToString("yyyy-MM-dd");
+            txtTime.Text = model.Deadline.ToString("HH:mm");
+            this.Text = "查看内容";
+            btnSave.Visible = false;
 
+        }
 
+        private void init() {
+            
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -29,7 +45,7 @@ namespace JiongNote
             }
             var model  =new ToDoModel() { 
                 Content=txtContent.Text,
-                Deadline = dateTimePicker.Value,
+                Deadline =DateTime.Parse(dateTimePicker.Value.ToString("yyyy-MM-dd ")+txtTime.Text+":00"),
             };
             if (TodoDao.Add(model))
             {

@@ -16,6 +16,28 @@ namespace JiongNote.Repository
         private static string treePath = Tool.GetResoucePath("/Resources/Data/note-tree.xml");
         private static string timeTemp = "yyyy-MM-dd HH:mm:ss";
 
+        #region 获取笔记
+        /// <summary>
+        /// 获取笔记
+        /// </summary>
+        /// <param name="createTime"></param>
+        /// <returns></returns>
+        public static NoteModel Get(DateTime createTime)
+        {
+            NoteModel result = null;
+
+            XmlDocument xmlDoc = new XmlDocument();
+            xmlDoc.Load(treePath);
+            var xmlPath = "/Notes/Note[createtime='" + createTime.ToString(timeTemp) + "']";
+            XmlNode node = xmlDoc.SelectSingleNode(xmlPath);
+            if (node != null)
+            {
+                result = parseNoteNode(node);
+            }
+            return result;
+        }
+        #endregion
+
         #region 获取笔记分类
         public static List<NoteTypeModel> GetTypes (){
             var result = new List<NoteTypeModel>();

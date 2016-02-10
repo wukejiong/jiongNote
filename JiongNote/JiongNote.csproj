@@ -137,7 +137,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Images\bg.jpg" />
+    <Content Include="Resources\Images\icon.png" />
     <Content Include="Resources\Images\list-bg.jpg" />
+    <Content Include="Resources\Images\note.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
