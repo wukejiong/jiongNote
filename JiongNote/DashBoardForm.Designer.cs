@@ -51,6 +51,7 @@
             // 
             this.todoList.BackColor = System.Drawing.Color.PapayaWhip;
             this.todoList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.todoList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.todoList.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.todoList.ForeColor = System.Drawing.Color.Coral;
             this.todoList.FormattingEnabled = true;
@@ -66,6 +67,7 @@
             // 
             this.toReadList.BackColor = System.Drawing.Color.PapayaWhip;
             this.toReadList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.toReadList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.toReadList.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.toReadList.ForeColor = System.Drawing.Color.MediumSeaGreen;
             this.toReadList.FormattingEnabled = true;
@@ -79,7 +81,6 @@
             // 
             // btnTodoComplete
             // 
-            this.btnTodoComplete.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnTodoComplete.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnTodoComplete.ForeColor = System.Drawing.Color.Green;
             this.btnTodoComplete.Location = new System.Drawing.Point(488, 18);
@@ -93,7 +94,6 @@
             // 
             // btnCompleteRead
             // 
-            this.btnCompleteRead.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnCompleteRead.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnCompleteRead.ForeColor = System.Drawing.Color.Green;
             this.btnCompleteRead.Location = new System.Drawing.Point(564, 18);
@@ -125,7 +125,6 @@
             // 
             // btnAddTodo
             // 
-            this.btnAddTodo.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnAddTodo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAddTodo.Location = new System.Drawing.Point(575, 18);
             this.btnAddTodo.Margin = new System.Windows.Forms.Padding(4);
@@ -156,7 +155,6 @@
             // 
             // btnAddRead
             // 
-            this.btnAddRead.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnAddRead.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnAddRead.Location = new System.Drawing.Point(657, 18);
             this.btnAddRead.Margin = new System.Windows.Forms.Padding(4);

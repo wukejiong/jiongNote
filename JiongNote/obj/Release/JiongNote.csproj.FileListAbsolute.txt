@@ -31,3 +31,4 @@ E:\wkj\git\jiongNote\JiongNote\obj\Release\JiongNote.DashBoardForm.resources
 E:\wkj\git\jiongNote\JiongNote\obj\Release\JiongNote.NoteForm.resources
 E:\wkj\git\jiongNote\JiongNote\obj\Release\JiongNote.Properties.Resources.resources
 E:\wkj\git\jiongNote\JiongNote\obj\Release\JiongNote.csproj.GenerateResource.Cache
+E:\wkj\git\jiongNote\JiongNote\obj\Release\JiongNote.csprojResolveAssemblyReference.cache

@@ -38,7 +38,9 @@ namespace JiongNote
             this.webBrowser.Url = new Uri(Tool.GetResoucePath("\\Resources\\Data\\welcome.html"));
 
             leftWidth = splitContainer1.Panel1.Width;
-            btnToogle_Click(null,null);//默认关闭分类窗
+            splitContainer1.Panel1Collapsed = true;//默认关闭分类窗
+            this.webBrowser.Height = Screen.PrimaryScreen.Bounds.Height - this.webBrowser.Top-100;
+            this.webBrowser.Width = Screen.PrimaryScreen.Bounds.Width - this.webBrowser.Left-20;
         }
 
 
@@ -123,8 +125,14 @@ namespace JiongNote
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnToogle_Click(object sender, EventArgs e)
-        {
-            webBrowser.Width = webBrowser.Width + leftWidth * (splitContainer1.Panel1Collapsed ? -1 : 1);
+        { 
+            if (splitContainer1.Panel1Collapsed)
+            {
+                webBrowser.Width = Screen.PrimaryScreen.Bounds.Width - leftWidth - 60;
+            }else{
+                this.webBrowser.Width = Screen.PrimaryScreen.Bounds.Width - 20;
+            }
+            
             splitContainer1.Panel1Collapsed = !splitContainer1.Panel1Collapsed;
             btnToogle.Text = splitContainer1.Panel1Collapsed ? "》" : "《";
         }
@@ -203,6 +211,11 @@ namespace JiongNote
         private void 编辑ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTop_Click(object sender, EventArgs e)
+        {
+            webBrowser.Document.Window.ScrollTo(0, 0);
         }
     }
 }

@@ -48,6 +48,7 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.txtUrl = new System.Windows.Forms.TextBox();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.btnTop = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -58,7 +59,6 @@
             // 
             // menuStrip2
             // 
-            this.menuStrip2.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.menuStrip2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.开始ToolStripMenuItem,
@@ -69,7 +69,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip2.Size = new System.Drawing.Size(1444, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1512, 28);
             this.menuStrip2.TabIndex = 1;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -150,6 +150,7 @@
             // 
             this.splitContainer1.Panel2.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.splitContainer1.Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.splitContainer1.Panel2.Controls.Add(this.btnTop);
             this.splitContainer1.Panel2.Controls.Add(this.btnGo);
             this.splitContainer1.Panel2.Controls.Add(this.btnHistoryBack);
             this.splitContainer1.Panel2.Controls.Add(this.btnToogle);
@@ -157,8 +158,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnRefresh);
             this.splitContainer1.Panel2.Controls.Add(this.txtUrl);
             this.splitContainer1.Panel2.Controls.Add(this.webBrowser);
-            this.splitContainer1.Size = new System.Drawing.Size(1444, 569);
-            this.splitContainer1.SplitterDistance = 332;
+            this.splitContainer1.Size = new System.Drawing.Size(1512, 569);
+            this.splitContainer1.SplitterDistance = 341;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             this.splitContainer1.SplitterMoving += new System.Windows.Forms.SplitterCancelEventHandler(this.splitContainer1_SplitterMoving);
@@ -201,7 +202,6 @@
             // 
             // btnGo
             // 
-            this.btnGo.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnGo.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.btnGo.Location = new System.Drawing.Point(884, 11);
             this.btnGo.Margin = new System.Windows.Forms.Padding(4);
@@ -214,11 +214,10 @@
             // 
             // btnHistoryBack
             // 
-            this.btnHistoryBack.BackgroundImage = global::JiongNote.Properties.Resources.bg;
-            this.btnHistoryBack.Location = new System.Drawing.Point(1027, 12);
+            this.btnHistoryBack.Location = new System.Drawing.Point(1032, 12);
             this.btnHistoryBack.Margin = new System.Windows.Forms.Padding(4);
             this.btnHistoryBack.Name = "btnHistoryBack";
-            this.btnHistoryBack.Size = new System.Drawing.Size(73, 30);
+            this.btnHistoryBack.Size = new System.Drawing.Size(59, 30);
             this.btnHistoryBack.TabIndex = 6;
             this.btnHistoryBack.Text = "返回";
             this.btnHistoryBack.UseVisualStyleBackColor = true;
@@ -226,7 +225,6 @@
             // 
             // btnToogle
             // 
-            this.btnToogle.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnToogle.Location = new System.Drawing.Point(16, 11);
             this.btnToogle.Margin = new System.Windows.Forms.Padding(4);
             this.btnToogle.Name = "btnToogle";
@@ -248,7 +246,6 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.btnRefresh.Location = new System.Drawing.Point(946, 12);
             this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
@@ -273,18 +270,28 @@
             this.webBrowser.Margin = new System.Windows.Forms.Padding(4);
             this.webBrowser.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(1084, 507);
+            this.webBrowser.Size = new System.Drawing.Size(1131, 507);
             this.webBrowser.TabIndex = 0;
             this.webBrowser.Url = new System.Uri("", System.UriKind.Relative);
             this.webBrowser.NewWindow += new System.ComponentModel.CancelEventHandler(this.webBrowser_NewWindow);
+            // 
+            // btnTop
+            // 
+            this.btnTop.Location = new System.Drawing.Point(1104, 11);
+            this.btnTop.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTop.Name = "btnTop";
+            this.btnTop.Size = new System.Drawing.Size(45, 30);
+            this.btnTop.TabIndex = 8;
+            this.btnTop.Text = "Top";
+            this.btnTop.UseVisualStyleBackColor = true;
+            this.btnTop.Click += new System.EventHandler(this.btnTop_Click);
             // 
             // NoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::JiongNote.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1444, 597);
+            this.ClientSize = new System.Drawing.Size(1512, 597);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip2);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -329,6 +336,7 @@
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Button btnHistoryBack;
         private System.Windows.Forms.ToolStripMenuItem 便签ToolStripMenuItem;
+        private System.Windows.Forms.Button btnTop;
 
     }
 }
